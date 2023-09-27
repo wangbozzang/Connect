@@ -15,6 +15,11 @@ public class Menu {
 			int choice = scanner.nextInt();
 			if ( 1 == choice ) {
 				db.showList();
+				if ( 0 < db.getListSize() ) {
+					System.out.println("게시물 번호를 선택하시오>");
+					int bNumber = scanner.nextInt();
+					db.showContent(bNumber);
+				}
 			}
 			if ( 2 == choice ) {
 				db.writeBoard();

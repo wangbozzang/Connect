@@ -25,9 +25,6 @@ public class DataBase {
 			System.out.println();
 		}
 		System.out.println("-----------------------------");
-		if ( 0 < list.size() ) {
-			System.out.println("게시글을 선택하시오>");
-		}
 	}
 	
 	void writeBoard() {
@@ -49,5 +46,32 @@ public class DataBase {
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm");
 		return dateTime.format(formatter);
 	}
+	
+	void showContent(int bNumber) {
+		for ( int i = 0 ; i < list.size() ; i++ ) {
+			Board board = (Board)list.get(i);
+			if ( board.getNo() == bNumber ) {
+				System.out.println("--------------------------");
+				System.out.println("번호:"+board.getNo());
+				System.out.println("제목:"+board.getTitle());
+				System.out.println("내용:"+board.getContent());
+				System.out.println("작성자:"+board.getWriter());
+				System.out.println("작성일지:"+board.getDate());
+				System.out.println("--------------------------");
+				break;
+			}
+		}
+	}
+	
+	int getListSize() {
+		return this.list.size();
+	}
+	
+	
+	
+	
+	
+	
+	
 
 }
