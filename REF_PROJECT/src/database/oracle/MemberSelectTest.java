@@ -29,7 +29,7 @@ public class MemberSelectTest {
 					+ "        ,PW"
 					+ "        ,NAME"
 					+ "        ,AGE"
-					+ "        ,GENDER"
+					+ "        ,NVL(GENDER,' ') AS GENDER"
 					+ "        ,PHONE"
 					+ "        ,CREATE_DATE"
 					+ " FROM MEMBER";

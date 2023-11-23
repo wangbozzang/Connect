@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>스타벅스</title>
+	<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+	<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+	<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+	<div>
+		<h1>스타벅스(react)</h1>
+	</div>
+	<div>
+		<div id="divMenu">
+			<span><input type="button" name="btnMenu" data-name="아메리카노" data-price="5000" value="아메리카노(5000)"></span>
+			<span><input type="button" name="btnMenu" data-name="카페라떼" data-price="6000" value="카페라떼(6000)"></span>
+			<span><input type="button" name="btnMenu" data-name="핫초코" data-price="7000" value="핫초코(7000)"></span>
+		</div>
+		<div id="divTotal"></div>
+		<div id="divList"></div>
+	</div>
+	<script>
+		let count = 0;
+		let orderArr = [];
+		let total = 0;
+		document.getElementsByName('btnMenu')
+		.forEach(btn => btn.addEventListener('click',function(){
+			orderArr[count] = {
+				id: count+1
+				,name: this.dataset.name
+				,price: this.dataset.price
+			};
+			total += parseInt(this.dataset.price);
+			count++;
+			showTotal();
+			showList();
+		}));
+	</script>
+	<script type="text/babel">
+		const divTotal = ReactDOM.createRoot(document.getElementById('divTotal'));
+		const divList = ReactDOM.createRoot(document.getElementById('divList'));
+		function showTotal() {
+			divTotal.render(<Total />);
+		}
+		function Total() {
+			return (
+				<>
+					<h3>{total}</h3>
+				</>
+			)
+		}
+		function showList() {
+			divList.render(<List />);
+		}
+		function List() {
+			return (
+				<>
+					<ul>
+						{orderArr.map((order) => <Coffee key={order.id} name={order.name} price={order.price}/>)}
+					</ul>
+				</>
+			);
+		}
+		function Coffee(props) {
+			return (
+				<>
+					<li>{props.name}({props.price})</li>
+				</>
+			)
+		}
+	</script>
+</body>
+
+</html>

@@ -14,7 +14,7 @@ public class Clothes {
 			, int size
 			, String style
 			, int price) {
-		this.type = (type) ? "상의" : "하의";
+		this.type = (type) ? "상의" : 123;
 		this.size = size;
 		this.style = style;
 		this.price = price;

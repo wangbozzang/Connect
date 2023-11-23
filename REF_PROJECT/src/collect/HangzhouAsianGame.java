@@ -16,13 +16,19 @@ public class HangzhouAsianGame {
 	}
 	
 	void setESports() {
+		List list = new ArrayList();
+		
+		Schedule sch = new Schedule();
+		sch.setDate("9월 24일 (일)");
+		sch.setTime("10:00");
+		sch.setTitle("FIFA 온라인");
+		list.add(sch);
 		
 		Map map = new HashMap();
 		map.put("date", "9월 24일 (일)");
 		map.put("time", "10:00");
 		map.put("title", "FIFA 온라인");
-		
-		List list = new ArrayList();
+		map.put("No", "1");
 		list.add(map);
 		
 		map = new HashMap();

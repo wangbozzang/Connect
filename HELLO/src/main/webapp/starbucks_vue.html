@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>스타벅스(vue)</title>
+	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+	<div>
+		<h1>스타벅스</h1>
+	</div>
+	<div id="app">
+		<div id="divMenu">
+			<span><input v-on:click="addOrder('아메리카노', 5000)" type="button" name="btnMenu" value="아메리카노(5000)"></span>
+			<span><input v-on:click="addOrder('카페라떼', 6000)" type="button" name="btnMenu" value="카페라떼(6000)"></span>
+			<span><input v-on:click="addOrder('핫초코', 7000)" type="button" name="btnMenu" value="핫초코(7000)"></span>
+		</div>
+		<div id="divTotal">
+			<h3>{{ total }}</h3>
+		</div>
+		<div id="divList">
+			<ul>
+				<li v-for="order in orderArr">{{ order.name }}({{ order.price }})</li>
+			</ul>
+		</div>
+	</div>
+	<script>
+		const app = Vue.createApp({
+			data() {
+				return {
+					total: 0,
+					orderArr: []
+				}
+			},
+			methods: {
+				addOrder(name, price) {
+					this.total += parseInt(price)
+					let order = {
+						name: name
+						, price: price
+					}
+					this.orderArr.push(order)
+				}
+			}
+		})
+		app.mount('#app');
+	</script>
+</body>
+
+</html>

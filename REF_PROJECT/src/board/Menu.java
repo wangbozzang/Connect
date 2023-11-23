@@ -7,6 +7,7 @@ public class Menu {
 	void display() {
 		Scanner scanner = new Scanner(System.in);
 		DataBase db = new DataBase();
+		
 		while ( true ) {
 			System.out.println("1.게시글 보기");
 			System.out.println("2.게시글 작성");

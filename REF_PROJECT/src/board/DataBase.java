@@ -75,3 +75,27 @@ public class DataBase {
 	
 
 }
+SEQ
+,ID
+,PW
+,NAME
+,AGE
+,GENDER
+,PHONE
+,CREAT_DATE
+
+INSERT INTO member (
+    ID
+    ,PW
+    ,NAME
+    ,AGE
+    ,GENDER
+    ,PHONE
+) VALUES(
+    ?
+    ,?
+    ,?
+    ,?
+    ,?
+    ,?
+)

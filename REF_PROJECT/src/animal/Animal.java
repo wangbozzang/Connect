@@ -11,4 +11,3 @@ public abstract class Animal extends Object {
 		return this.name;
 	}
 }
- 

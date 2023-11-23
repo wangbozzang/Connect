@@ -1,0 +1,30 @@
+@charset "utf-8";
+body {
+  background-color: lightblue;
+  text-align: center;
+}
+
+table {
+	margin: auto;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+div {
+	background-color:red;
+}
+
+span {
+	background-color:green;
+}
+
+
+
+
+
+
+
+

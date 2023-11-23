@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="http://localhost/main.js"></script>
+	</head>
+	<body>
+		<h2>What Can JavaScript Do?</h2>
+		<p id="demo">JavaScript can change HTML content.</p>
+		
+		<script>
+			document.write('Good Day!');
+		</script>
+		
+		<button id="btnClick" type="button" 
+			onclick="alert('onclick3');">Click Me!</button>
+		<script>
+			document.getElementById('btnClick')
+			.addEventListener('click',display);
+		</script>
+		<script>
+			document.getElementById('btnClick')
+			.addEventListener('click',function(){
+				alert('onclick1');
+			});
+		</script>
+		<script>
+			document.getElementById('btnClick')
+			.onclick = function(){
+				alert('onclick2');
+			};
+		</script>
+		
+	</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Insert title here</title>
+		<style>
+			#display {
+				background-color: black;
+				height: 300px;
+				color: white;
+				overflow: scroll;
+			}
+		</style>
+		<script src="http://127.0.0.1/jquery-3.7.1.min.js"></script>
+	</head>
+	<body>
+		<div id="display">
+			<h1>Hello World!</h1>
+		</div>
+		<br>
+		<div id="component">
+			<input type="text" id="inputText">
+		</div>
+		<div id="menu">
+			<input type="button" id="btnConfirm" value="확인">
+		</div>
+		<script>
+			$('#btnConfirm').on('click', function(){
+				$('#display').append($('#inputText').val());
+				$('#display').append('<br>');
+				$('#inputText').val('');
+				$('#inputText').focus();
+			});
+			
+			$(document).ready(function(){
+				console.log('jQuery ready 1');
+			});
+			
+			$(window).on('load', function(){
+				console.log('jQuery window');
+			});
+			
+			$(document).ready(function(){
+				console.log('jQuery ready 2');
+			});
+			
+			
+			function init() {
+				$('#display').append('<h2>프로그램 로딩이 완료되었습니다.</h2>');
+			}
+			
+			console.log('body end!');
+			
+			setTimeout(()=>{
+				console.log($('body'));
+				$('body').on('load', function(){
+					console.log('jQuery body 2');
+				}());
+			},3000);
+			
+		</script>
+		
+		
+		
+		
+		
+	</body>
+</html>
