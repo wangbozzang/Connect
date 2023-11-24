@@ -35,6 +35,7 @@
 			<div>
 				<ul>
 					<li><a href="<c:url value='/starbucks/menu.star'/>">메뉴</a></li>
+					<li><a href="<c:url value='/file/main.star'/>">파일</a></li>
 				</ul>
 			</div>
 		</c:if>
