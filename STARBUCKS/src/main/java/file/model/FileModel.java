@@ -39,7 +39,8 @@ public class FileModel {
 	
 	public static void download(HttpServletRequest req, HttpServletResponse res) throws IOException {
 		String downloadFileName = req.getParameter("downloadFileName");
-		res.setContentType("application/zip");
+		res.setContentType("application/octet-stream");
+//		String fileName = new String("톰캣.zip".getBytes("UTF-8"), "ISO-8859-1"); 
         res.setHeader("Content-disposition", "attachment; filename=" + downloadFileName);
         try(InputStream in = req.getServletContext().getResourceAsStream("/download/" + downloadFileName);
         	ServletOutputStream out = res.getOutputStream()) {

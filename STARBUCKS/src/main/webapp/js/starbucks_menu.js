@@ -14,5 +14,5 @@ function removeBorderStyle(){
 }
 document.getElementById('btnOrder').addEventListener('click',function(){
 	document.getElementById('amount').value = document.getElementById('count').value;
-	document.getElementById('orderForm').submit();
+	document.getElementById('orderForm').submit();// 스껄.
 });
